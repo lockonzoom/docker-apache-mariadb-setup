@@ -1,23 +1,21 @@
 
-# Project Docker Compose - PHP, MariaDB
+# Project Docker Compose - Web Server
 
-โครงการนี้เป็นการตั้งค่าระบบ PHP, MariaDB ด้วย Docker Compose โดยรองรับการใช้งาน `vlucas/phpdotenv` สำหรับจัดการ Environment Variables ใน PHP
+โครงการนี้เป็นการตั้งค่า ระบบ PHP, MariaDB, Router, และ FFmpeg ด้วย Docker Compose พร้อมรองรับการใช้งาน .env เพื่อเชื่อมต่อฐานข้อมูลและปรับค่าต่าง ๆ ได้
 
----
-
-## โครงสร้างไฟล์ (File Structure)
-
-```
-project-docker-compose/
-├── docker-compose.yml          # Configuration สำหรับ Docker Compose
-├── .env                        # Environment Variables สำหรับ Docker Compose
-├── php/
-│   ├── Dockerfile              # Dockerfile สำหรับสร้าง PHP Container
-│   └── src/                    # โฟลเดอร์เก็บโค้ด PHP
-│       ├── composer.json       # Dependency สำหรับ PHP
-│       ├── .env                # Environment Variables สำหรับ PHP
-│       └── conn.php            # ตัวอย่างโค้ด PHP สำหรับเชื่อมต่อฐานข้อมูล
-```
+คุณสมบัติ
+	1.	PHP 8.2 + Apache:
+	- รองรับการพัฒนาแอปพลิเคชัน PHP
+	- ใช้ mod_rewrite เพื่อรองรับระบบ Router
+	2.	MariaDB:
+	- ฐานข้อมูลสำหรับจัดการข้อมูลแบบ Relational Database
+	- การตั้งค่าผ่านไฟล์ .env
+	3.	FFmpeg:
+	- ใช้สำหรับแปลงไฟล์วิดีโอเป็นรูปแบบ M3U8
+	4.	Router:
+	- ระบบจัดการเส้นทาง (Routing) สำหรับการสร้าง RESTful API
+	5.	Security:
+	- ตรวจจับ SQL Injection ในข้อมูลที่ส่งมาผ่าน $_POST และ $_GET
 
 ---
 
