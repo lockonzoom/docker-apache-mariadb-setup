@@ -154,6 +154,4 @@ composer install
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-# docker-compose--webserverPHP-env-
-# docker-compose-webserverPHP-env
-# docker-compose-webserverPHP-env
+
